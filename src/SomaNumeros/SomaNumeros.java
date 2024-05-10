@@ -16,13 +16,17 @@ public class SomaNumeros {
     }
 
     public Integer calcularSoma() {
-        Integer total = 0;
+        if (!integerList.isEmpty()) {
+            Integer total = 0;
 
-        for (Integer number : integerList) {
-            total += number;
+            for (Integer number : integerList) {
+                total += number;
+            }
+
+            return total;
         }
 
-        return total;
+        throw new RuntimeException("Lista de inteiros vazia!");
     }
 
     public Integer encontrarMaiorNumero(){

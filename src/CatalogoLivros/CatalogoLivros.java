@@ -1,6 +1,7 @@
 package CatalogoLivros;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CatalogoLivros {
@@ -15,40 +16,51 @@ public class CatalogoLivros {
     }
 
     public List<Livro> pesquisaPorAutor(String autor) {
-        List<Livro> livrosEncontrados = new ArrayList<>();
+        if (!livroList.isEmpty()) {
+            List<Livro> livrosEncontrados = new ArrayList<>();
 
-        for (Livro livro : livroList) {
-            if (livro.getAutor().equals(autor)) {
-                livrosEncontrados.add(livro);
+            for (Livro livro : livroList) {
+                if (livro.getAutor().equals(autor)) {
+                    livrosEncontrados.add(livro);
+                }
             }
-        }
 
-        return livrosEncontrados;
+            return livrosEncontrados;
+        }
+        throw new RuntimeException("Lista de livros vazia");
     }
 
     public List<Livro> pesquisaPorIntervaloAnos(int anoInicial, int anoFinal) {
-        List<Livro> livrosEncontrados = new ArrayList<>();
+        if (!livroList.isEmpty()) {
+            List<Livro> livrosEncontrados = new ArrayList<>();
 
-        for (Livro livro : livroList) {
-            if (livro.getAnoPublicacao() >= anoInicial && livro.getAnoPublicacao() <= anoFinal) {
-                livrosEncontrados.add(livro);
+            for (Livro livro : livroList) {
+                if (livro.getAnoPublicacao() >= anoInicial && livro.getAnoPublicacao() <= anoFinal) {
+                    livrosEncontrados.add(livro);
+                }
             }
+
+            return livrosEncontrados;
         }
 
-        return livrosEncontrados;
+        throw new RuntimeException("Lista de livros vazia");
     }
 
     public Livro pesquisaPorTitulo(String titulo) {
-        Livro livroEncontrado = new Livro();
+        if (!livroList.isEmpty()) {
+            Livro livroEncontrado = new Livro();
 
-        for (Livro livro : livroList) {
-            if (livro.getTitulo().equals(titulo)) {
-                livroEncontrado = livro;
-                break;
+            for (Livro livro : livroList) {
+                if (livro.getTitulo().equals(titulo)) {
+                    livroEncontrado = livro;
+                    break;
+                }
             }
+
+            return livroEncontrado;
         }
 
-        return livroEncontrado;
+        throw new RuntimeException("Lista de livros vazia");
     }
 
     public static void main(String[] args) {

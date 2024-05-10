@@ -15,26 +15,30 @@ public class CarrinhoCompras {
     }
 
     public void removerItem(String nome) {
-        List<Itens> removeItensList = new ArrayList<>();
+        if (!itensList.isEmpty()) {
+            List<Itens> removeItensList = new ArrayList<>();
 
-        for (Itens item : itensList) {
-            if (item.getNome().equals(nome)) {
-                removeItensList.add(item);
+            for (Itens item : itensList) {
+                if (item.getNome().equals(nome)) {
+                    removeItensList.add(item);
+                }
             }
-        }
 
-        itensList.removeAll(removeItensList);
+            itensList.removeAll(removeItensList);
+        }
     }
 
     public void calculaValorTotal() {
-        double total = 0.0;
+        if (!itensList.isEmpty()){
+            double total = 0.0;
 
-        for (Itens item : itensList) {
-            double unitValue = item.getPreco() * item.getQuantidade();
-            total += unitValue;
+            for (Itens item : itensList) {
+                double unitValue = item.getPreco() * item.getQuantidade();
+                total += unitValue;
+            }
+
+            System.out.println("O valor total dos itens é: " + total);;
         }
-
-        System.out.println("O valor total dos itens é: " + total);;
     }
 
     public void exibirItens() {
