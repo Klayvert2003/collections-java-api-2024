@@ -1,7 +1,6 @@
-package CatalogoLivros;
+package list.CatalogoLivros;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class CatalogoLivros {

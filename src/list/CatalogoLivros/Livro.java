@@ -1,4 +1,4 @@
-package CatalogoLivros;
+package list.CatalogoLivros;
 
 public class Livro {
     private String titulo;
