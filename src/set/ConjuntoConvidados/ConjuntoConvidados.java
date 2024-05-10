@@ -33,6 +33,7 @@ public class ConjuntoConvidados {
 
         conjuntoConvidados.adicionarConvidado("Klayvert", 4002);
         conjuntoConvidados.adicionarConvidado("Joãozinho", 8922);
+        conjuntoConvidados.adicionarConvidado("teste", 8922);
         conjuntoConvidados.adicionarConvidado("Osvaldo", 123);
 
         conjuntoConvidados.exibirConvidados();
