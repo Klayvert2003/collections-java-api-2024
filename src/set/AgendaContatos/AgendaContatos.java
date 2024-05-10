@@ -29,10 +29,19 @@ public class AgendaContatos {
     }
 
     public void atualizarNumeroContato(String nome, int novoNumero) {
+        Contatos contatoAtualizado = null;
+
         if (!contatosSet.isEmpty()) {
-            contatosSet.removeIf(c -> c.getNome().equalsIgnoreCase(nome));
-            this.adicionarContato(nome, novoNumero);
+            for (Contatos c : contatosSet) {
+                if (c.getNome().equalsIgnoreCase(nome)) {
+                    c.setNumero(novoNumero);
+                    contatoAtualizado = c;
+                    break;
+                }
+            }
         }
+
+        System.out.println("O contato atualizado é: " + contatoAtualizado);
     }
 
     public static void main(String[] args) {

@@ -20,6 +20,10 @@ public class Contatos {
         return nome;
     }
 
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
